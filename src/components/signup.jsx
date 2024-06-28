@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useForm from "../Hooks/useForm";
 
 const SignUp = () => {
   const { values, handleChange, handleSubmit } = useForm(submitForm);
+  const [loading, setLoading] = useState(false);
 
   function submitForm() {
-    console.log('Form submitted:', values);
+    setLoading(true);
+    // Simulate an API call
+    setTimeout(() => {
+      console.log('Form submitted:', values);
+      setLoading(false);
+    }, 2000);
   }
 
   function showAlert() {
@@ -56,8 +62,9 @@ const SignUp = () => {
           <button
             type="submit"
             className="w-full bg-royal-purple text-white p-2 rounded hover:bg-royal-purple-dark transition duration-300"
+            disabled={loading}
           >
-            Submit
+            {loading ? 'Submitting...' : 'Submit'}
           </button>
         </form>
         <button
