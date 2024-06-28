@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.bg-royal-purple {
+    background-color: #4b0082;
+}
+
+.hover\:bg-royal-purple-dark:hover {
+    background-color: #3a0066;
+}
