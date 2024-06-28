@@ -7,7 +7,7 @@ const SignUp = () => {
 
   function submitForm() {
     setLoading(true);
-    // Simulate an API call
+    
     setTimeout(() => {
       console.log('Form submitted:', values);
       setLoading(false);
