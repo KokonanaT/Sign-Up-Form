@@ -1,12 +1,15 @@
 import React from 'react';
-import useForm from  "../Hooks/useForm";
+import useForm from "../Hooks/useForm";
 
 const SignUp = () => {
   const { values, handleChange, handleSubmit } = useForm(submitForm);
 
   function submitForm() {
-   
     console.log('Form submitted:', values);
+  }
+
+  function showAlert() {
+    alert('This is an alert message!');
   }
 
   return (
@@ -57,10 +60,15 @@ const SignUp = () => {
             Submit
           </button>
         </form>
+        <button
+          onClick={showAlert}
+          className="w-full mt-4 bg-red-500 text-white p-2 rounded hover:bg-red-700 transition duration-300"
+        >
+          Show Alert
+        </button>
       </div>
     </div>
   );
 };
 
 export default SignUp;
-
